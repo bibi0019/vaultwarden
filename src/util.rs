@@ -88,7 +88,7 @@ impl Fairing for AppHeaders {
                 // Leaked Passwords check: api.pwnedpasswords.com
                 // 2FA/MFA Site check: api.2fa.directory
                 // # Mail Relay: https://bitwarden.com/blog/add-privacy-and-security-using-email-aliases-with-bitwarden/
-                // app.simplelogin.io, app.addy.io, api.fastmail.com, api.forwardemail.net
+                // app.simplelogin.io, app.addy.io, api.fastmail.com, api.forwardemail.net, quack.duckduckgo.com
                 format!(
                     "default-src 'none'; \
                     font-src 'self'; \
@@ -116,6 +116,7 @@ impl Fairing for AppHeaders {
                     https://app.addy.io/api/ \
                     https://api.fastmail.com/ \
                     https://api.forwardemail.net \
+                    https://quack.duckduckgo.com/api/email/addresses \
                     {allowed_connect_src};\
                     ",
                     icon_service_csp = CONFIG._icon_service_csp(),
